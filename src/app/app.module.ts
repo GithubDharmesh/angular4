@@ -1,14 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { ListReportComponent } from './list-report/list-report.component';
+import { ReportDetailsComponent } from './report-details/report-details.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    ListReportComponent,
+    ReportDetailsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      {path:'ListReport',component:ListReportComponent},
+      {path:'ReportDetail',component:ReportDetailsComponent},
+      {path:'Home',component:HomeComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
