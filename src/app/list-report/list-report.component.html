@@ -1,38 +1,48 @@
+<div><br/><br/><br/></div>
 <main role="main" class="container">
+
   <div class="starter-template">      
                <h1>list-report works!</h1>
-                <form class="form-horizontal">
-                    <fieldset>
+               <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th><fa name="cog" animation="spin"></fa></th>
+                      <th>Report Name</th>
+                      <th>Post Author</th>
+                      <th>IsReportPublic</th>
+                      <th>Date Approved</th>
+                      <th>Report Status</th>
+                      <th>Post</th>
+                      <th>Country</th>
+                      <th>Report Highlights</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+          <!--iterate throught the date and show the conent in table -->
+                    <tr *ngFor="let report of reportProperty" 
+                    [class.selected]="report === selectedReport" (click)="onSelect(report)">
+                    <th scope="row">{{report.ID}}</th>
+                      
+                      <td> {{report.reportName}}</td>
+                      <td>{{report.reportPostAuthor}}</td>
+                      <!--<i class="fa-li fa fa-check-square">fa fa-ban' </i>-->
+                      <!--<td  [ngStyle]="{'background-color':report.isPublic === 'true' ? 'green' : 'red' }"></td>-->
+                     
+                     <td><i [ngStyle]="{'class':report.isPublic==='report.isPublic' ? 'fa-li fa fa-check-square' : 'fa-li fa fa-check-square' }"></i>{{report.isPublic}}</td>
+                      <td>{{report.dtApproved|date:'mm/dd/yyyy'}}</td>
+                      <td>{{report.reportStatus}}</td>
+                      <td>{{report.reportPost}}</td>
+                      <td [ngStyle]="{'background-color':'report.reportCountry'==='India' ? 'blue' : 'red' }">{{report.reportCountry}}</td>
+                     <!-- <td>{{report.reportCountry}}</td>-->
+                      <td>{{report.reportHighlights}}</td>
+                  
+                    </tr>
                     
-                    <!-- Form Name -->
-                    <legend>Create New Report</legend>
-                    
-                    <!-- Text input-->
-                    <div class="form-group">
-                      <label class="col-md-4 control-label" for="ReportName">ReportName:</label>  
-                      <div class="col-md-8">
-                      <input id="ReportName" name="ReportName" type="text" placeholder="placeholder" class="form-control input-md" required="">
-                      <span class="help-block">Dont use special charecters($,#,!* etc and keep it length max to 200 charecters</span>  
-                      </div>
-                    </div>
-                    
-                    <!-- Prepended checkbox -->
-                    <div class="form-group">
-                      <label class="col-md-4 control-label" for="IsReportPublic">Is Public Report:</label>
-                      <div class="col-md-8">
-                        <div class="input-group">
-                          <span class="input-group-addon">     
-                              <input type="checkbox">     
-                          </span>
-                          <input id="IsReportPublic" name="IsReportPublic" class="form-control" type="text" placeholder="Check this if the Report is for Public" required="">
-                        </div>
-                        <p class="help-block">Public Reports are accessed to all user online</p>
-                      </div>
-                    </div>
-                    
-                    </fieldset>
-                    </form>
-                <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+                  </tbody>
+                </table>
+
+
+        
               </div>
 
 </main>
