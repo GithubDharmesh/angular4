@@ -28,11 +28,11 @@
                       <!--<i class="fa-li fa fa-check-square">fa fa-ban' </i>-->
                       <!--<td  [ngStyle]="{'background-color':report.isPublic === 'true' ? 'green' : 'red' }"></td>-->
                      
-                     <td><i [ngStyle]="{'class':report.isPublic==='report.isPublic' ? 'fa-li fa fa-check-square' : 'fa-li fa fa-check-square' }"></i>{{report.isPublic}}</td>
+                     <td>{{report.isPublic}}</td>
                       <td>{{report.dtApproved|date:'mm/dd/yyyy'}}</td>
                       <td>{{report.reportStatus}}</td>
                       <td>{{report.reportPost}}</td>
-                      <td [ngStyle]="{'background-color':'report.reportCountry'==='India' ? 'blue' : 'red' }">{{report.reportCountry}}</td>
+                      <td [ngStyle]="{'background-color':report.reportCountry==='India' ? 'blue' : 'red' }">{{report.reportCountry}}</td>
                      <!-- <td>{{report.reportCountry}}</td>-->
                       <td>{{report.reportHighlights}}</td>
                   
@@ -43,6 +43,10 @@
 
 
         
+              </div>
+              <div class="container">
+             <!--The below selector will call the child compoent and pass value of selected report https://www.youtube.com/watch?v=I317BhehZKM -->
+                  <app-report-details [selectedReport]="selectedReport"> </app-report-details>
               </div>
 
 </main>

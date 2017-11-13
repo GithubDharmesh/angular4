@@ -31,6 +31,7 @@ selectedReport:Report;
   }
   onSelect(parmReport:Report):void{
     this.selectedReport=parmReport;
+    console.log(this.selectedReport);
   }
 
 }

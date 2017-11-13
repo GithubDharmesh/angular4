@@ -1,6 +1,28 @@
+<div *ngIf="selectedReport">
 
- <h1> report-details works!</h1>
- <h1> report-details works!</h1>
- <h1> report-details works!</h1>
- <h1> report-details works!</h1>
+  <div>
+    <label>id: </label>{{selectedReport.ID}}
+  </div>
+  <div>
+    <label>Report Name </label>{{selectedReport.reportName}}
+  </div>
+  <div>
+    <label>Post Author: </label>{{selectedReport.reportPostAuthor}}
+  </div>
+  <div>
+    <label>IsPublic: </label>{{selectedReport.isPublic}}
+  </div>
+  <div>
+    <label>Date Approved: </label>{{selectedReport.dtApproved}}
+  </div>
+  <div>
+    <label>Report Status: </label>{{selectedReport.reportStatus}}
+  </div>
+  <div>
+    <label>Report Post: </label>{{selectedReport.reportPost}}
+  </div>
+  <div>
+    <label>Report Highlights: </label>{{selectedReport.reportHighlights}}
+  </div>
 
+</div>
